@@ -1,0 +1,36 @@
+SYSTEM DESIGN PROBLEM: URL SHORTENER
+
+Design a service like TinyURL that converts long URLs into short links.
+
+REQUIREMENTS
+
+- Users can submit a long URL and receive a unique short URL.
+- Opening the short URL redirects the user to the original URL.
+- Short links should not expire by default.
+- The system should handle many more redirects than new URL requests.
+- The service should remain available if a server fails.
+
+EXAMPLE
+
+Long URL:
+https://example.com/articles/system-design-guide
+
+Short URL:
+https://short.ly/a7Bc91
+
+QUESTIONS TO CONSIDER
+
+- What API endpoints are needed?
+- How will unique short codes be generated?
+- Where will the URLs be stored?
+- How will the system handle heavy redirect traffic?
+- How can caching improve performance?
+- How will duplicate short codes be prevented?
+- How will the system scale across multiple servers?
+
+TASK
+
+Explain the API, database schema, high-level architecture, scaling strategy, and major tradeoffs.
+
+
+Answer:
