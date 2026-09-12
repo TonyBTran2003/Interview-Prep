@@ -14,9 +14,25 @@ class ListNode:
 
 
 def remove_nth_from_end(head, n):
-    # Your code here
-    pass
+    dummy = ListNode(0)
+    dummy.next = head
+    slow = dummy
+    fast = dummy
+    for _ in range(n+1): # +1 because we have a dummy/empty node before numbers
+        if fast is None:
+            break
+        fast = fast.next
+    
 
+    while fast: #when fast reaches the end of the list 
+        fast = fast.next
+        slow = slow.next
+
+    slow.next = slow.next.next #replace next value(delete value) with the next next value
+
+    return dummy.next
+
+    
 
 def build_list(values):
     dummy = ListNode()
