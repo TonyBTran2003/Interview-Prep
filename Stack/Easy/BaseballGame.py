@@ -16,14 +16,15 @@ def cal_points(operations):
     total = 0
     for operation in operations:
         if operation == 'C':
-            None
+            stack.pop()
         elif operation == 'D':
-            None
+            stack.append(2 * stack[-1])
         elif operation == '+':
-            None
+            stack.append(stack[-1] + stack[-2])
         else:
-            stack.append(operation)
-    print(stack)
+            stack.append(int(operation))
+
+    return sum(stack)
 
 
 # Test cases
@@ -37,4 +38,4 @@ print(cal_points(["1", "C"]))
 # Expected: 0
 
 print(cal_points(["10", "20", "+", "D"]))
-# Expected: 90
+# Expected: 120
